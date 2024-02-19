@@ -113,6 +113,16 @@ namespace Eyes.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap eyes_Closed {
+            get {
+                object obj = ResourceManager.GetObject("eyes_Closed", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap eyes_Left {
             get {
                 object obj = ResourceManager.GetObject("eyes_Left", resourceCulture);

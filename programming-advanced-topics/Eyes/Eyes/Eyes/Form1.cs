@@ -11,6 +11,8 @@ namespace Eyes
         int xMargin = 0;
         int yMargin = 0;
 
+        bool eyesAreClosed = false;
+
         public EyesForm()
         {
             InitializeComponent();
@@ -41,7 +43,7 @@ namespace Eyes
         public void placeContainer()
         {
             xMargin = (xAxisSize - eyesImage.Width) / 2;
-            yMargin = (yAxisSize - eyesImage.Height) / 2;
+            yMargin = yAxisSize - eyesImage.Height;
 
             eyesImage.Location = new Point(xMargin, yMargin);
         }
@@ -92,56 +94,80 @@ namespace Eyes
 
         public void setEyesImage(int quadrantX, int quadrantY)
         {
-            switch (quadrantX)
+            if (!eyesAreClosed)
             {
-                case 0:
-                    switch (quadrantY)
-                    {
-                        case 0:
-                            eyesImage.Image = Properties.Resources.eyes_TopLeft;
-                            break;
-                        case 1:
-                            eyesImage.Image = Properties.Resources.eyes_Left;
-                            break;
-                        case 2:
-                            eyesImage.Image = Properties.Resources.eyes_BottomLeft;
-                            break;
-                    }
-                    break;
-                case 1:
-                    switch (quadrantY)
-                    {
-                        case 0:
-                            eyesImage.Image = Properties.Resources.eyes_Top;
-                            break;
-                        case 1:
-                            eyesImage.Image = Properties.Resources.eyes_Center;
-                            break;
-                        case 2:
-                            eyesImage.Image = Properties.Resources.eyes_Bottom;
-                            break;
-                    }
-                    break;
-                case 2:
-                    switch (quadrantY)
-                    {
-                        case 0:
-                            eyesImage.Image = Properties.Resources.eyes_TopRight;
-                            break;
-                        case 1:
-                            eyesImage.Image = Properties.Resources.eyes_Right;
-                            break;
-                        case 2:
-                            eyesImage.Image = Properties.Resources.eyes_BottomRight;
-                            break;
-                    }
-                    break;
+                switch (quadrantX)
+                {
+                    case 0:
+                        switch (quadrantY)
+                        {
+                            case 0:
+                                eyesImage.Image = Properties.Resources.eyes_TopLeft;
+                                break;
+                            case 1:
+                                eyesImage.Image = Properties.Resources.eyes_Left;
+                                break;
+                            case 2:
+                                eyesImage.Image = Properties.Resources.eyes_BottomLeft;
+                                break;
+                        }
+                        break;
+                    case 1:
+                        switch (quadrantY)
+                        {
+                            case 0:
+                                eyesImage.Image = Properties.Resources.eyes_Top;
+                                break;
+                            case 1:
+                                eyesImage.Image = Properties.Resources.eyes_Center;
+                                break;
+                            case 2:
+                                eyesImage.Image = Properties.Resources.eyes_Bottom;
+                                break;
+                        }
+                        break;
+                    case 2:
+                        switch (quadrantY)
+                        {
+                            case 0:
+                                eyesImage.Image = Properties.Resources.eyes_TopRight;
+                                break;
+                            case 1:
+                                eyesImage.Image = Properties.Resources.eyes_Right;
+                                break;
+                            case 2:
+                                eyesImage.Image = Properties.Resources.eyes_BottomRight;
+                                break;
+                        }
+                        break;
+                }
             }
         }
 
         private void eyesImage_MouseMove(object sender, MouseEventArgs e)
         {
-            eyesImage.Image = Properties.Resources.eyes_Squint;
+            if (!eyesAreClosed)
+            {
+                if (e.Y < eyesImage.Height / 2)
+                {
+                    eyesImage.Image = Properties.Resources.eyes_Squint;
+                }
+                else
+                {
+                    eyesImage.Image = Properties.Resources.eyes_Bottom;
+                }
+            }
+        }
+
+        private void eyesImage_MouseDown(object sender, MouseEventArgs e)
+        {
+            eyesImage.Image = Properties.Resources.eyes_Closed;
+            eyesAreClosed = true;
+        }
+
+        private void eyesImage_MouseUp(object sender, MouseEventArgs e)
+        {
+            eyesAreClosed = false;
         }
     }
 }

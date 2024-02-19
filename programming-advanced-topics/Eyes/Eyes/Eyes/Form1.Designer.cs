@@ -30,22 +30,10 @@ namespace Eyes
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EyesForm));
-            eyesImage = new PictureBox();
             label1 = new Label();
+            eyesImage = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)eyesImage).BeginInit();
             SuspendLayout();
-            // 
-            // eyesImage
-            // 
-            eyesImage.Image = (Image)resources.GetObject("eyesImage.Image");
-            eyesImage.Location = new Point(36, 28);
-            eyesImage.Name = "eyesImage";
-            eyesImage.Size = new Size(297, 167);
-            eyesImage.SizeMode = PictureBoxSizeMode.Zoom;
-            eyesImage.TabIndex = 0;
-            eyesImage.TabStop = false;
-            eyesImage.MouseMove += eyesImage_MouseMove;
             // 
             // label1
             // 
@@ -54,10 +42,24 @@ namespace Eyes
             label1.Size = new Size(100, 23);
             label1.TabIndex = 0;
             // 
+            // eyesImage
+            // 
+            eyesImage.Image = Resources.eyes_Center;
+            eyesImage.Location = new Point(227, 60);
+            eyesImage.Name = "eyesImage";
+            eyesImage.Size = new Size(356, 378);
+            eyesImage.SizeMode = PictureBoxSizeMode.Zoom;
+            eyesImage.TabIndex = 0;
+            eyesImage.TabStop = false;
+            eyesImage.MouseDown += eyesImage_MouseDown;
+            eyesImage.MouseMove += eyesImage_MouseMove;
+            eyesImage.MouseUp += eyesImage_MouseUp;
+            // 
             // EyesForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(255, 216, 219);
             ClientSize = new Size(800, 450);
             Controls.Add(label1);
             Controls.Add(eyesImage);
@@ -71,8 +73,7 @@ namespace Eyes
         }
 
         #endregion
-
-        private PictureBox eyesImage;
         private Label label1;
+        private PictureBox eyesImage;
     }
 }
