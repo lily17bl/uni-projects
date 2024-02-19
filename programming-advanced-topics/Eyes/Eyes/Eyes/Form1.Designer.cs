@@ -45,9 +45,9 @@ namespace Eyes
             // eyesImage
             // 
             eyesImage.Image = Resources.eyes_Center;
-            eyesImage.Location = new Point(227, 60);
+            eyesImage.Location = new Point(265, 70);
             eyesImage.Name = "eyesImage";
-            eyesImage.Size = new Size(356, 378);
+            eyesImage.Size = new Size(240, 378);
             eyesImage.SizeMode = PictureBoxSizeMode.Zoom;
             eyesImage.TabIndex = 0;
             eyesImage.TabStop = false;

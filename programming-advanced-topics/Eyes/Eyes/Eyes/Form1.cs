@@ -161,7 +161,22 @@ namespace Eyes
 
         private void eyesImage_MouseDown(object sender, MouseEventArgs e)
         {
-            eyesImage.Image = Properties.Resources.eyes_Closed;
+            int xPos = e.X;
+            int xSize = eyesImage.Width;
+
+            if (xPos <= xSize / 3)
+            {
+                eyesImage.Image = Properties.Resources.eyes_LeftEyeClosed;
+            }
+            else if (xPos > xSize/3 && xPos <= (xSize/2))
+            {
+                eyesImage.Image = Properties.Resources.eyes_Closed;
+            }
+            else
+            {
+                eyesImage.Image = Properties.Resources.eyes_RightEyeClosed;
+            }
+
             eyesAreClosed = true;
         }
 
