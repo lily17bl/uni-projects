@@ -1,0 +1,64 @@
+0000 {
+  name: César
+  username: usuario1
+  phone: 6871168468
+  birthDate: 3/10/2004
+  socialNetwork: Twitter
+  password: Password123!
+}
+0001 {
+  name: David
+  username: usuario2
+  phone: 6871460125
+  birthDate: 3/10/2004
+  socialNetwork: Facebook
+  password: Password123!!
+}
+0002 {
+  name: adsadas
+  username: asd123
+  phone: 1231231231
+  birthDate: 3/14/2013
+  socialNetwork: Facebook
+  password: Hszskz1714!
+}
+0003 {
+  name: dasdasd
+  username: ^pa^p./0
+  phone: 1312452353
+  birthDate: 3/14/2013
+  socialNetwork: Instagram
+  password: Qbpq./0}}
+}
+0004 {
+  name: adasdas
+  username: pa^pa^p
+  phone: 1231231231
+  birthDate: 3/14/2013
+  socialNetwork: Instagram
+  password: Epwphw.4.1|
+}
+0005 {
+  name: César David
+  username: rpr^ofl.
+  phone: 1231232121
+  birthDate: 3/14/2013
+  socialNetwork: Facebook
+  password: Epwphw.4.1|
+}
+0006 {
+  name: DASDAS
+  username: rpbok^jb/
+  phone: 1231212321
+  birthDate: 3/14/2013
+  socialNetwork: Facebook
+  password: Epwphw.4.1|
+}
+0007 {
+  name: asdas
+  username: ^pa^pa^p
+  phone: 1231231221
+  birthDate: 3/14/2013
+  socialNetwork: Facebook
+  password: Epwphw.4.1|
+}
