@@ -30,6 +30,7 @@
         }
         while (!flag);
 
+        printHeader();
         middleSquareMethod(0, seed, digits, history);
     }
 
@@ -66,6 +67,11 @@
     {
         String row = String.Format("{0} | {1} | {2} | {3} | {4} ", i, seed, number, newSeed, randomNumber);
         Console.WriteLine(row);
+    }
+
+    static void printHeader()
+    {
+        Console.WriteLine(" i  |  s   |    n^2   |  ni  | ri");
     }
 
     static string stringfy (int value, int maxdigits)
