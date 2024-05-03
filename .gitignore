@@ -401,3 +401,5 @@ FodyWeavers.xsd
 programming-advanced-topics/crudalumnos/crudalumnosTests
 
 programming-advanced-topics/crudalumnos/crudalumnosUITests
+
+*.xcodeproj
